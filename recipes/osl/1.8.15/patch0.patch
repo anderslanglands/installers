@@ -1,0 +1,20 @@
+diff --git a/src/cmake/modules/FindOpenEXR.cmake b/src/cmake/modules/FindOpenEXR.cmake
+index a9afacb..a54b639 100644
+--- a/src/cmake/modules/FindOpenEXR.cmake
++++ b/src/cmake/modules/FindOpenEXR.cmake
+@@ -33,6 +33,7 @@ endif ()
+ # directories, like NixOS does
+ set (GENERIC_INCLUDE_PATHS
+     ${OPENEXR_CUSTOM_INCLUDE_DIR}
++    $ENV{OPENEXR_ROOT}/include
+     ${OPENEXR_HOME}/include
+     ${ILMBASE_HOME}/include
+     /usr/include
+@@ -73,6 +74,7 @@ endif ()
+ # OPENEXR_CUSTOM_LIB_DIR and ${OPENEXR_HOME}/lib.
+ set (GENERIC_LIBRARY_PATHS 
+     ${OPENEXR_CUSTOM_LIB_DIR}
++    $ENV{OPENEXR_ROOT}/lib
+     ${OPENEXR_HOME}/lib
+     ${ILMBASE_HOME}/lib
+     ${OPENEXR_INCLUDE_PATH}/../lib

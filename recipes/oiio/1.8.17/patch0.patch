@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8a08407..723fa1a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,7 +60,7 @@ set (CMAKE_MODULE_PATH
+ include (oiio_macros)
+ include (platform)
+ include (compiler)   # All the C++ and compiler related options live here
+-
++set(CMAKE_FIND_ROOT_PATH "$ENV{TIFF_ROOT};$ENV{JPEGTURBO_ROOT};$ENV{GIFLIB_ROOT};$ENV{OCIO_ROOT};$ENV{PNG_ROOT};$ENV{RAW_ROOT};$ENV{WEBP_ROOT}")
+ 
+ option (VERBOSE "Print lots of messages while compiling" OFF)
+ set (${PROJ_NAME}_NAMESPACE ${PROJECT_NAME} CACHE STRING

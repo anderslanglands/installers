@@ -109,8 +109,7 @@ sudo cp target/release/alacritty /usr/local/bin/
 
 popd
 
-mkdir ~/.config/alacritty
-ln -s ~/code/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -s ~/code/dotfiles/alacritty ~/.config/alacritty
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
 
 # nodejs (for CoC etc)

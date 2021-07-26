@@ -113,9 +113,8 @@ ln -s ~/code/dotfiles/alacritty ~/.config/alacritty
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
 
 # nodejs (for CoC etc)
-curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo apt install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
 # nvim
 sudo add-apt-repository ppa:neovim-ppa/unstable

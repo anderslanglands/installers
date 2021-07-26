@@ -5,9 +5,12 @@ sudo apt upgrade
 
 # Next our graphics drivers
 sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt install nvidia-driver-460
+sudo apt install nvidia-driver-470
 
 # reboot
+
+# Curl for all the dodgy sh installers
+sudo apt install curl
 
 # ethernet
 sudo apt install net-tools
@@ -23,66 +26,23 @@ sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable
 sudo apt-get update 
 sudo apt-get install google-chrome-stable
 
-# Fish
-sudo apt install fish
+
+
+# Zsh
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Dev
 
 # Rust
-sudo apt install curl
+
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 export PATH = $HOME/.cargo/bin:$PATH
 cargo install ripgrep
 cargo install fd-find
-
-# GCC
-sudo apt install git
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo apt install gcc-8 gcc-9 gcc-10 g++-8 g++-9 g++-10
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 100 --slave /usr/bin/g++ g++ /usr/bin/g++-7 --slave /usr/bin/gcov gcov /usr/bin/gcov-7
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8 --slave /usr/bin/gcov gcov /usr/bin/gcov-8
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 95 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 90 --slave /usr/bin/g++ g++ /usr/bin/g++-10 --slave /usr/bin/gcov gcov /usr/bin/gcov-10
-
-sudo apt upgrade
-
-## cmake
-wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null#!/usr/bin/env bash
-
-# First, update everything
-sudo apt upgrade
-
-# Next our graphics drivers
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt install nvidia-driver-460
-
-# reboot
-
-# ethernet
-sudo apt install net-tools
-sudo apt install nfs-common
-
-# realtek drivers from here:
-https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software
-
-
-# Chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-get update 
-sudo apt-get install google-chrome-stable
-
-# Fish
-sudo apt install fish
-
-# Dev
-
-# Rust
-sudo apt install curl
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-export PATH = $HOME/.cargo/bin:$PATH
-cargo install ripgrep
-cargo install fd-find
+cargo install exa
+cargo install cargo-edit
+cargo install bat
 
 # GCC
 sudo apt install git
@@ -97,9 +57,7 @@ sudo apt upgrade
 
 ## cmake
 wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
-sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
-sudo apt-get update
-sudo apt-get install cmake
+
 
 sudo apt install fasd
 sudo apt install libx11-dev

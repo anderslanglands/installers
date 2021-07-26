@@ -100,6 +100,7 @@ cp SF-Mono-Nerd-Font/*.otf ~/.fonts
 fc-cache -fv
 
 # Alacritty
+sudo apt install libxkbcommon-dev
 git clone https://github.com/alacritty/alacritty.git
 cd alacritty
 sudo apt install libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev
